@@ -1,12 +1,13 @@
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Enquiries</title>
+    
 </head>
 
 <body>
-
+<div style="text-align:center">
+    <h2>Equiries</h2>
+    
+  </div>
 <link href="enquiry-form.css" rel="stylesheet">
 <div class="container">
   
