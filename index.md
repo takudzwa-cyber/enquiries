@@ -7,7 +7,7 @@
 
 <body>
 
-<link href="contact-form.css" rel="stylesheet">
+<link href="enquiry-form.css" rel="stylesheet">
 <div class="container">
   
   <div class="row">
@@ -17,7 +17,7 @@
         <input type="text" id="name" name="Name" placeholder="Your name..">
         <label for="Email">Email</label>
         <input type="email" id="email" name="Email" placeholder="Your email..">
-        <label for="subject">Enquiry</label>
+        <label for="Enquiries">Enquiry</label>
         <textarea id="Enquiry" name="Enquiry" placeholder="Write your query.." style="height:170px"></textarea>
         <input type="submit" value="Submit">
       </form>
