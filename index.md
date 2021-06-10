@@ -9,10 +9,7 @@
 
 <link href="contact-form.css" rel="stylesheet">
 <div class="container">
-  <div style="text-align:center">
-    <h2>Enquiries</h2>
-    
-  </div>
+  
   <div class="row">
     <div class="column">
       <form action="/action_page.php">
