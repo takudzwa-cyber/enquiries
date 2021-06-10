@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
         <input type="text" id="name" name="Name" placeholder="Your name..">
         <label for="Email">Email</label>
         <input type="email" id="email" name="Email" placeholder="Your email..">
-        <label for="subject">Subject</label>
+        <label for="subject">Enquiry</label>
         <textarea id="Enquiry" name="Enquiry" placeholder="Write your query.." style="height:170px"></textarea>
         <input type="submit" value="Submit">
       </form>
