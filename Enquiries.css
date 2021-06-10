@@ -10,14 +10,14 @@ body{
     
 
 }
-.enquiries-title
+.enquiry-title
 {
     margin-top: 100px;
     color: #fff;
     text-transform: uppercase;
     transition: all 4s ease-in-out;
 }
-.enquiries-title
+.enquiry-title h1
 {
     front-size: 32px;
     line height: 10px;
