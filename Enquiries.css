@@ -3,7 +3,7 @@ body
 {
     margin: 0;
     padding: 0;
-    text-align:centre;
+    text-align: centre;
     background: linear-gradient(rgba(0, 0, 50, 0.5),rgba(0, 0, 50, 0.5)),url(Landscape.jfif);
     background-size: cover;
     background-position: centre;
@@ -13,6 +13,7 @@ body
 .enquiry-title
 {
     margin-top: 100px;
+    text-align: centre;
     color: #fff;
     text-transform: uppercase;
     transition: all 4s ease-in-out;
