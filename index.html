@@ -5,21 +5,21 @@
   <script>
         function validateForm()
     {
-        var nam=document.forms["enqform"]["name"].value;
-            var num=document.forms["enqform"]["number"].value;
-                var ema=document.forms["enqform"]["email"].value;
-                    var en=document.forms["enqform"]["enquiry"].value;
-        if (fn==null|| fn=="")
+        var nam =document.forms["enqform"]["name"].value;
+            var num =document.forms["enqform"]["number"].value;
+                var ema =document.forms["enqform"]["email"].value;
+                    var en =document.forms["enqform"]["enquiry"].value;
+        if (!nam.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/))
         {
-            alert("name cannot be blank");
+            alert("name invalid");
             return false;
         }                
-        else if (n==null||n=="")
+        else if (!num.match(/^[0-9]{10}$/)
         {
-            alert("mobile number cannot be blank");
+            alert("mobile invalid");
             return false;
         }
-        else if (em==null||em=="")
+        else if (ema==null||ema =="")
         {
             alert("email cannot be blank");
             return false;
