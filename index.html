@@ -20,8 +20,13 @@
                                   <br>
                                   <textarea class="field" placeholder ="Message" style="height:170px"></textarea> 
                                   <br>
-                              <button class="btn-contact">Submit</button>
-                                  <div class="popup" onclick="myFunction()">Click me!<span class="popuptext" id="myPopup">Popup text...</span></div>
+                              <button onclick="myFunction()">Click me!</button>
+    <p id="demo"></p>
+    <script>
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "Enquiry submited";
+      }
+    </script>
                                   <br>
                               </div>
                           </div>
