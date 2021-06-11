@@ -2,6 +2,7 @@
     <head>
       <title> Enquiries</title>
       <link rel="stylesheet"href="Enquiries.css">
+        <script defer src="scrip.js"></script>
       
     
 
@@ -20,16 +21,15 @@
                                   <br>
                                   <textarea class="field" placeholder ="Message" style="height:170px"></textarea> 
                                   <br>
-                              <button onclick="myFunction()">Submit</button>
-    <p id="demo"></p>
-    <script>
-// When the user clicks on <div>, open the popup
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-</script>
-                                  <br>
+                              
+                              <button data-submit-target-"submit">Submit</button>
+                              <div class="submit" id="submit">
+                                  <button data-close-button class="close-button">&times</button>
+                              </div>
+                              </div class="submit-body">
+                          Thank you!! Enquiry submitted
+                      </div>
+                      </div>id="overlay"></div>
                               </div>
                           </div>
                       </div>
