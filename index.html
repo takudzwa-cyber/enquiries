@@ -23,10 +23,12 @@
                               <button onclick="myFunction()">Click me!</button>
     <p id="demo"></p>
     <script>
-      function myFunction() {
-        document.getElementById("demo").innerHTML = "Enquiry submited";
-      }
-    </script>
+// When the user clicks on <div>, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
                                   <br>
                               </div>
                           </div>
