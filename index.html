@@ -5,23 +5,25 @@
   <script>
         function validateForm()
     {
+         function validateForm()
+    {
         var fn=document.forms["enqform"]["name"].value;
             var n=document.forms["enqform"]["number"].value;
                 var em=document.forms["enqform"]["email"].value;
                     var en=document.forms["enqform"]["enquiry"].value;
-        if (fn==null||fn=="")
+        if (!fn.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)
         {
-            alert("name invalid");
-            return false;
+             producePrompt('Name is required', 'name-error' , 'red')
+        return false;
         }                
-        else if (n!=0||n!=9)
+        else if (!n.match(/^[0-9]{10}$/)
         {
-            alert("mobile number invalid");
+            alert("mobile invalid");
             return false;
         }
-        else if (em==null||em=="")
+        else if (!em.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
         {
-            alert("email cannot be blank");
+            alert("email invalid");
             return false;
         }
         else if (en==null||en=="")
@@ -32,11 +34,27 @@
         if(en!="")
         {
             alert("enquiry is successful");
-             return false;
-          
+            return false;
         }
     }
-     
+    
+}
+
+function jsShow(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function jsHide(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+
+function producePrompt(message, promptLocation, color) {
+
+  document.getElementById(promptLocation).innerHTML = message;
+  document.getElementById(promptLocation).style.color = color;
+
+}
   </script>
 <style>
     body
