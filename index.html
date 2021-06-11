@@ -1,7 +1,8 @@
 <html>
     <head>
       <title> Enquiries</title>
-      <link rel="stylesheet"href="Enquiries.css">
+        <link rel="stylesheet" type="text/css" href="Enquiries.css" media="screen"/>
+      
        <script>
         function validateForm()
     {
@@ -39,13 +40,13 @@
       
     
 
-       
+       <head>
              <body>
                   <div class="enquiry-title">
                       <h1>Enquiries</h1>
                   <div>    
                       <div class="enquiry-form">
-                          <form id="enquiry-form" method="post" action="">
+                          <form id="enquiry-form" method="post" onsubmit="validateForm()">
                                   <input type="text"class="field" placeholder="Your Full Name">
                                   <br>
                                   <input type="tel"class="field" placeholder="Your PhoneNumber">
@@ -54,23 +55,11 @@
                                   <br>
                                   <textarea class="field" placeholder ="Message" style="height:170px"></textarea> 
                                   <br>
+                                  <input type="submit" value="Submit">
                               
-                              <div class="row">
-                <div class="col-sm-12 form-group">
-                    <button type="submit" class="btn btn-lg btn-default pull-right" >submit →</button>
-                </div>
-            </div>
+                              </form>
 
-        </form>
-        <div id="success_message" style="width:100%; height:100%; display:none; ">
-            <h3>Posted your message successfully!</h3>
-        </div>
-        <div id="error_message"
-                style="width:100%; height:100%; display:none; ">
-                    <h3>Error</h3>
-                    Sorry there was an error sending your form.
-
-        </div>>
+       
                               </div>
                           </div>
                       </div>
