@@ -32,7 +32,7 @@
         }
         if(en!="")
         {
-            alert("enquiry is successful");
+            alert("enquiry sent");
             return false;
         }
     }
@@ -46,7 +46,7 @@
                       <h1>Enquiries</h1>
                   <div>    
                       <div class="enquiry-form">
-                          <form id="enquiry-form" method="post" onsubmit="validateForm()">
+                          <form name="enquiry-form" method="post" onsubmit="validateForm()">
                                   <input type="text"class="field" placeholder="Your Full Name">
                                   <br>
                                   <input type="tel"class="field" placeholder="Your PhoneNumber">
