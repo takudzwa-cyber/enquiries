@@ -37,39 +37,10 @@
             return false;
         }
     }
-    function validateForm() {
-  if (!validaten() || !validatefn() || !validateem() || !validateen()) {
-    jsShow('submit-error');
-    producePrompt('Please fix errors to submit.', 'submit-error', 'red');
-    setTimeout(function(){jsHide('submit-error');}, 2000);
-    return false;
-}
-
-
-else {
-    alert("Your Details have been saved successfully")
-return true;
-
-}
-}
+   
     
-}
-
-function jsShow(id) {
-  document.getElementById(id).style.display = 'block';
-}
-
-function jsHide(id) {
-  document.getElementById(id).style.display = 'none';
-}
 
 
-function producePrompt(message, promptLocation, color) {
-
-  document.getElementById(promptLocation).innerHTML = message;
-  document.getElementById(promptLocation).style.color = color;
-
-}
   </script>
 <style>
     body
