@@ -2,12 +2,45 @@
     <head>
       <title> Enquiries</title>
       <link rel="stylesheet"href="Enquiries.css">
-        <script defer src="script.js"></script>
+       <script>
+        function validateForm()
+    {
+        var fn=document.forms["enqform"]["name"].value;
+            var n=document.forms["enqform"]["number"].value;
+                var em=document.forms["enqform"]["email"].value;
+                    var en=document.forms["enqform"]["enquiry"].value;
+        if (fn==null|| fn=="")
+        {
+            alert("name cannot be blank");
+            return false;
+        }                
+        else if (n==null||n=="")
+        {
+            alert("mobile number cannot be blank");
+            return false;
+        }
+        else if (em==null||em=="")
+        {
+            alert("email cannot be blank");
+            return false;
+        }
+        else if (en==null||en=="")
+        {
+            alert("enquiry  cannot be blank");
+            return false;
+        }
+        if(en!="")
+        {
+            alert("enquiry is successful");
+            return false;
+        }
+    }
+  </script>
       
     
 
-        </head>
-              <body>
+       
+             <body>
                   <div class="enquiry-title">
                       <h1>Enquiries</h1>
                   <div>    
@@ -24,7 +57,7 @@
                               
                               <div class="row">
                 <div class="col-sm-12 form-group">
-                    <button type="submit" class="btn btn-lg btn-default pull-right" >Send →</button>
+                    <button type="submit" class="btn btn-lg btn-default pull-right" >submit →</button>
                 </div>
             </div>
 
