@@ -9,7 +9,7 @@
             var n=document.forms["enqform"]["number"].value;
                 var em=document.forms["enqform"]["email"].value;
                     var en=document.forms["enqform"]["enquiry"].value;
-        if (fn==null|| fn=="")
+        if (fn!=a&fn!=A|| fn!=z&fn!=Z)
         {
             alert("name cannot be blank");
             return false;
@@ -32,6 +32,7 @@
         if(en!="")
         {
             alert("enquiry is successful");
+            document.getElementById("enqForm").reset(); 
             return false;
         }
     }
