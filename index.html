@@ -9,7 +9,7 @@
             var n=document.forms["enqform"]["number"].value;
                 var em=document.forms["enqform"]["email"].value;
                     var en=document.forms["enqform"]["enquiry"].value;
-        if (fn!=a||fn!=z)
+        if (fn==null||fn=="")
         {
             alert("name invalid");
             return false;
@@ -36,6 +36,7 @@
           
         }
     }
+     
   </script>
 <style>
     body
