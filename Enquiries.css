@@ -20,11 +20,13 @@ body
 }
 .enquiry-title h1
 {
+     text-align: centre;
     front-size: 32px;
     line height: 10px;
 }
 form
 {
+     text-align: centre;
     margin-top: 50px;
     transition: all 4s ease-in-out;
 }
