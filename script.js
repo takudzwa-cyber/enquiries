@@ -1,37 +1,64 @@
-const opensubmitButtons = document.querySelectorAll('[data-submit-target]')
-const closesubmitButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
+<script>
+$(function()
+{
+    function after_form_submitted(data)
+    {
+        if(data.result == 'success')
+        {
+            $('form#reused_form').hide();
+            $('#success_message').show();
+            $('#error_message').hide();
+        }
+        else
+        {
+            $('#error_message').append('<ul></ul>');
 
-opensubmitButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const submit = document.querySelector(button.dataset.submitTarget)
-    opensubmit(submit)
-  })
-})
+            jQuery.each(data.errors,function(key,val)
+            {
+                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+            });
+            $('#success_message').hide();
+            $('#error_message').show();
 
-overlay.addEventListener('click', () => {
-  const submit = document.querySelectorAll('.submit.active')
-  submit.forEach(submit => {
-    closesubmit(submit)
-  })
-})
+            //reverse the response on the button
+            $('button[type="button"]', $form).each(function()
+            {
+                $btn = $(this);
+                label = $btn.prop('orig_label');
+                if(label)
+                {
+                    $btn.prop('type','submit' );
+                    $btn.text(label);
+                    $btn.prop('orig_label','');
+                }
+            });
 
-closesubmitButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const submit = button.closest('.submit')
-    closesubmit(submit)
-  })
-})
+        }//else
+    }
 
-function opensubmit(submit) {
-  if (submit == null) return
-  submit.classList.add('active')
-  overlay.classList.add('active')
-}
+	$('#reused_form').submit(function(e)
+      {
+        e.preventDefault();
 
-function closesubmit(submit) {
-  if (submit == null) return
-  submit.classList.remove('active')
-  overlay.classList.remove('active')
-}
+        $form = $(this);
+        //show some response on the button
+        $('button[type="submit"]', $form).each(function()
+        {
+            $btn = $(this);
+            $btn.prop('type','button' );
+            $btn.prop('orig_label',$btn.text());
+            $btn.text('Sending ...');
+        });
 
+
+                    $.ajax({
+                type: "POST",
+                url: 'handler.php',
+                data: $form.serialize(),
+                success: after_form_submitted,
+                dataType: 'json'
+            });
+
+      });
+});
+</script>
