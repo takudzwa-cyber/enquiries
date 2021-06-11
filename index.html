@@ -13,7 +13,7 @@
                     var en=document.forms["enqform"]["enquiry"].value;
         if (!fn.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)
         {
-             producePrompt('Name is required', 'name-error' , 'red')
+            alert("name invalid");
         return false;
         }                
         else if (!n.match(/^[0-9]{10}$/)
@@ -37,6 +37,21 @@
             return false;
         }
     }
+    function validateForm() {
+  if (!validaten() || !validatefn() || !validateem() || !validateen()) {
+    jsShow('submit-error');
+    producePrompt('Please fix errors to submit.', 'submit-error', 'red');
+    setTimeout(function(){jsHide('submit-error');}, 2000);
+    return false;
+}
+
+
+else {
+    alert("Your Details have been saved successfully")
+return true;
+
+}
+}
     
 }
 
