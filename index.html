@@ -31,6 +31,30 @@
       return false;
   }
   document.querySelector('.status').innerHTML = "Sending...";
+        formData = {
+'name'     : $('input[name=name]').val(),
+'email'    : $('input[name=email]').val(),
+'number'  : $('input[name=number]').val(),
+'message'  : $('textarea[name=message]').val()
+};
+
+
+$.ajax({
+url : "mail.php",
+type: "POST",
+data : formData,
+success: function(data, textStatus, jqXHR)
+{
+
+$('#status').text(data.message);
+if (data.code)
+$('#contact-form').closest('form').find("input[type=text], textarea").val("");
+},
+error: function (jqXHR, textStatus, errorThrown)
+{
+$('#status').text(jqXHR);
+}
+});
 }
 </script>
 <style>
@@ -78,13 +102,13 @@
         color: white;
         text-align: center;
         
-        transition: all 4s ease-in-out
+        transition: all 4s ease-in-out;
     }
     div label
     {
         color: black;
  
-        transition: all 4s ease-in-out
+        transition: all 4s ease-in-out;
     }
 </style>
 </head>
