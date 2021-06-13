@@ -182,14 +182,18 @@ function producePrompt(message, promptLocation, color) {
         <form name="enqform" method="post" onsubmit="validateForm()">
             <label for="name"></label>
             <input type="text" class="form-control" id="contact-name" name="name" placeholder="Enter your name.." onkeyup='validateName()'>
+            <span class='error-message' id='name-error'></span>
             <label for="number"> </label>
             <input type="tel" class="form-control" id="contact-phone" name="phone" placeholder="Ex: 0785269271" onkeyup='validatePhone()'>
+            <span class='error-message' id='number-error'></span>
             <label for="email"></label>
             <input type="email" class="form-control" id="contact-email" name="email" placeholder="Enter email" onkeyup='validateEmail()'>
+            <span class='error-message' id='email-error'></span>
             <label for="enquiry"></label>
             <textarea class="form-control" rows="5" id="contact-message" name="message" placeholder="Enter a brief message" onkeyup='validateMessage()'></textarea>
+            <span class='error-message' id='message-error'></span>
             <button onclick='return validateForm()' class="btn btn-default">Submit</button>
-           
+           <span class='error-message' id='submit-error'></span>
         </form>
     </div>
 </body>
