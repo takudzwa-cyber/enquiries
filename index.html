@@ -3,123 +3,35 @@
 <head>
     <title>Enquiry </title>
  <script type="text/javascript">
-    function validateName() {
-
-      var name = document.getElementById('contact-name').value;
-
-      if(name.length == 0) {
-
-        producePrompt('Name is required', 'name-error' , 'red')
-        return false;
-
-    }
-
-    if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
-
-        producePrompt('First and last name, please.','name-error', 'red');
-        return false;
-
-    }
-
-    producePrompt('Valid', 'name-error', 'green');
-    return true;
-
-}
-
-function validatePhone() {
-
-  var phone = document.getElementById('contact-phone').value;
-
-  if(phone.length == 0) {
-      producePrompt('Phone number is required.', 'phone-error', 'red');
+    function validateForm() {
+  var name =  document.getElementById('name').value;
+  if (name == "") {
+      document.querySelector('.status').innerHTML = "enter your name";
       return false;
   }
-
-  if(phone.length != 10) {
-      producePrompt('Include area code.', 'phone-error', 'red');
+  var email =  document.getElementById('email').value;
+  if (email == "") {
+      document.querySelector('.status').innerHTML = "Email cannot be empty";
+      return false;
+  } else {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(!re.test(email)){
+          document.querySelector('.status').innerHTML = "Email invalid";
+          return false;
+      }
+  }
+  var subject =  document.getElementById('phone').value;
+  if (subject == "") {
+      document.querySelector('.status').innerHTML = "enter phone number";
       return false;
   }
-
-  if(!phone.match(/^[0-9]{10}$/)) {
-      producePrompt('Only digits, please.' ,'phone-error', 'red');
+  var message =  document.getElementById('message').value;
+  if (message == "") {
+      document.querySelector('.status').innerHTML = "enter phone number";
       return false;
   }
-
-  producePrompt('Valid', 'phone-error', 'green');
-  return true;
-
+  document.querySelector('.status').innerHTML = "Sending...";
 }
-
-function validateEmail () {
-
-  var email = document.getElementById('contact-email').value;
-
-  if(email.length == 0) {
-
-    producePrompt('Email Invalid','email-error', 'red');
-    return false;
-
-}
-
-if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-
-    producePrompt('Email Invalid', 'email-error', 'red');
-    return false;
-
-}
-
-producePrompt('Valid', 'email-error', 'green');
-return true;
-
-}
-
-function validateMessage() {
-  var message = document.getElementById('contact-message').value;
-  var required = 30;
-  var left = required - message.length;
-
-  if (left > 0) {
-    producePrompt(left + ' more characters required','message-error','red');
-    return false;
-}
-
-producePrompt('Valid', 'message-error', 'green');
-return true;
-
-}
-
-function validateForm() {
-  if (!validateName() || !validatePhone() || !validateEmail() || !validateMessage()) {
-    jsShow('submit-error');
-    producePrompt('Please fix errors to submit.', 'submit-error', 'red');
-    setTimeout(function(){jsHide('submit-error');}, 2000);
-    return false;
-}
-
-
-else {
-    alert("Your Details have been saved successfully")
-return true;
-
-}
-}
-
-function jsShow(id) {
-  document.getElementById(id).style.display = 'block';
-}
-
-function jsHide(id) {
-  document.getElementById(id).style.display = 'none';
-}
-
-
-function producePrompt(message, promptLocation, color) {
-
-  document.getElementById(promptLocation).innerHTML = message;
-  document.getElementById(promptLocation).style.color = color;
-
-}
-
 </script>
 <style>
     body
@@ -181,19 +93,19 @@ function producePrompt(message, promptLocation, color) {
     <div>
         <form name="enqform" method="post" onsubmit="validateForm()">
             <label for="name"></label>
-            <input type="text" class="form-control" id="contact-name" name="name" placeholder="Enter your name.." onkeyup='validateName()'>
-            <span class='error-message' id='name-error'></span>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name.." >
+           
             <label for="number"> </label>
-            <input type="tel" class="form-control" id="contact-phone" name="phone" placeholder="Ex: 0785269271" onkeyup='validatePhone()'>
-            <span class='error-message' id='number-error'></span>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ex: 0785269271">
+           
             <label for="email"></label>
-            <input type="email" class="form-control" id="contact-email" name="email" placeholder="Enter email" onkeyup='validateEmail()'>
-            <span class='error-message' id='email-error'></span>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" >
+            
             <label for="enquiry"></label>
-            <textarea class="form-control" rows="5" id="contact-message" name="message" placeholder="Enter a brief message" onkeyup='validateMessage()'></textarea>
-            <span class='error-message' id='message-error'></span>
-            <button onclick='return validateForm()' class="btn btn-default">Submit</button>
-           <span class='error-message' id='submit-error'></span>
+            <textarea class="form-control" rows="10" id="message" name="message" placeholder="Enter a brief message" ></textarea>
+            
+            <a class="btn btn-primary" onclick="validateForm();">Submit</a>
+           
         </form>
     </div>
 </body>
