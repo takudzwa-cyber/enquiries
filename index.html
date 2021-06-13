@@ -93,18 +93,18 @@
     <div>
         <form name="enqform" method="post" onsubmit="validateForm()">
             <label for="name"></label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name.." >
+            <input type="text" class="form-control" id="name" name="name" placeholder="Ex: John Someone" >
            
             <label for="number"> </label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ex: 0785269271">
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ex: 0777226949">
            
             <label for="email"></label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" >
+            <input type="text" class="form-control" id="email" name="email" placeholder="Ex: someone@gmail.com" >
             
             <label for="enquiry"></label>
             <textarea class="form-control" rows="10" id="message" name="message" placeholder="Enter a brief message" ></textarea>
             
-            <a class="btn btn-primary" onclick="validateForm();">Submit</a>
+           <button onclick='return validateForm()' class="btn btn-default">Submit</button>
            
         </form>
     </div>
